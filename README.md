@@ -6,14 +6,23 @@ node index.js
 
 ## Endpoints
 
-GET /api/livros
-Lista todos os livros
+### GET /api/livros
+Lista todos os livros com paginação.
 
-GET /api/livros/:id
-Busca por ID
+### GET /api/livros/:id
+Busca um livro pelo ID.
 
-POST /api/livros
-Cria livro
+### GET /api/livros?genero=Fantasia
+Filtra livros por gênero.
+
+### GET /api/livros?ordem=nota&direcao=desc
+Ordena livros por nota.
+
+### GET /api/livros?pagina=2
+Paginação dos resultados.
+
+### POST /api/livros
+Cria um novo livro.
 
 Body:
 {
