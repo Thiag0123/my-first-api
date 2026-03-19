@@ -37,12 +37,12 @@ app.get('/api/livros', (req, res) => {
 
     let resultado = livros;
 
-    // 🔍 Filtro por gênero
+    // Filtro por gênero
     if (genero) {
         resultado = resultado.filter(l => l.genero.toLowerCase() === genero.toLowerCase());
     }
 
-    // 🔄 Ordenação
+    // Ordenação
     if (ordem) {
         resultado = resultado.sort((a, b) => {
             if (ordem === 'titulo') {
@@ -59,7 +59,7 @@ app.get('/api/livros', (req, res) => {
         });
     }
 
-    // 📄 Paginação
+    // Paginação
     const paginaNum = parseInt(pagina);
     const limiteNum = parseInt(limite);
 
@@ -95,7 +95,7 @@ app.post('/api/livros', (req, res) => {
     console.log("POST FOI CHAMADO");
     const { titulo, autor, ano, genero, nota } = req.body;
 
-    // 🔴 VALIDAÇÕES (ESSENCIAL)
+    // VALIDAÇÕES (ESSENCIAL)
     if (!titulo || !autor || !ano || !genero || nota === undefined) {
         return res.status(400).json({
             erro: "Todos os campos são obrigatórios"
