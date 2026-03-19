@@ -1,28 +1,31 @@
 # API de Livros
 
-## Descrição
-API REST desenvolvida com Node.js e Express para gerenciar livros.
-
-## Funcionalidades
-- Listar todos os livros
-- Buscar por ID
-- Filtrar por gênero
-- Ordenar por título ou nota
-- Paginação
+## Como rodar
+npm install
+node index.js
 
 ## Endpoints
 
-### Listar livros
 GET /api/livros
+Lista todos os livros
 
-### Buscar por ID
 GET /api/livros/:id
+Busca por ID
 
-### Filtros
-GET /api/livros?genero=Fantasia
+POST /api/livros
+Cria livro
 
-### Ordenação
-GET /api/livros?ordem=nota&direcao=desc
+Body:
+{
+  "titulo": "Livro",
+  "autor": "Autor",
+  "ano": 2024,
+  "genero": "Tecnologia",
+  "nota": 9
+}
 
-### Paginação
-GET /api/livros?pagina=1&limite=5
+## Validações
+
+- Campos obrigatórios
+- Nota entre 0 e 10
+- Ano numérico
