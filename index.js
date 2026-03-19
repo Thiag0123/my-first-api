@@ -88,6 +88,47 @@ app.get('/api/livros/:id', (req, res) => {
     res.json(livro);
 });
 
+let proximoId = 11; // já que você tem 10 livros
+
+// POST /api/livros - Criar novo livro
+app.post('/api/livros', (req, res) => {
+    console.log("POST FOI CHAMADO");
+    const { titulo, autor, ano, genero, nota } = req.body;
+
+    // 🔴 VALIDAÇÕES (ESSENCIAL)
+    if (!titulo || !autor || !ano || !genero || nota === undefined) {
+        return res.status(400).json({
+            erro: "Todos os campos são obrigatórios"
+        });
+    }
+
+    if (typeof nota !== 'number' || nota < 0 || nota > 10) {
+        return res.status(400).json({
+            erro: "Nota deve ser um número entre 0 e 10"
+        });
+    }
+
+    if (typeof ano !== 'number') {
+        return res.status(400).json({
+            erro: "Ano deve ser um número"
+        });
+    }
+
+    // Criar novo livro
+    const novoLivro = {
+        id: proximoId++,
+        titulo,
+        autor,
+        ano,
+        genero,
+        nota
+    };
+
+    livros.push(novoLivro);
+
+    res.status(201).json(novoLivro);
+});
+
 // 7. Iniciar servidor
 app.listen(PORT, () => {
     console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
