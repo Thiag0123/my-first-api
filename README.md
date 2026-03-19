@@ -19,7 +19,6 @@ URL: http://localhost:3000/api/livros
 Body: não possui  
 
 Resposta:
-```json
 {
   "dados": [
     {
