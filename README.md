@@ -162,10 +162,10 @@ Ano deve ser um número
 ## Testes no Postman
 
 GET funcionando:
-![GET](images/get-livros.png)
+![GET](get-livros.png)
 
 POST funcionando:
-![POST](images/post-livro.png)
+![POST](post-livro.png)
 
 Erro de validação:
-![Erro](images/erro-validacao.png)
+![Erro](erro-validacao.png)
