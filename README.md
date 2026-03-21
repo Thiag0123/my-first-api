@@ -9,6 +9,10 @@ node index.js
 
 Servidor: http://localhost:3000
 
+COLLECTION POSTMAN:
+
+![Collection](Collection Postman)
+
 ---
 
 ## Endpoints
