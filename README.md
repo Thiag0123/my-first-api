@@ -9,6 +9,10 @@ node index.js
 
 Servidor: http://localhost:3000
 
+COLLECTION POSTMAN
+
+https://github.com/Thiag0123/my-first-api/blob/main/Collection%20Postman
+
 ## Endpoints
 
 ### 1. Listar livros
